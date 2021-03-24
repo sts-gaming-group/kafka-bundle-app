@@ -1,0 +1,9 @@
+version: "3.5"
+services:
+  php:
+    build: .
+    container_name: kafka-bundle-testing-app
+    working_dir: /application
+    volumes:
+      - ./:/application
+      - ./docker/php-cli/php-cli-ini-overrides.ini:/etc/php/7.4/cli/conf.d/99-overrides.ini
