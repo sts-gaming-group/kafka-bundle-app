@@ -1,0 +1,16 @@
+parameters:
+    kafka_default_brokers: ['%env(KAFKA_DEFAULT_BROKER_ONE)%', '%env(KAFKA_DEFAULT_BROKER_TWO)%', '%env(KAFKA_DEFAULT_BROKER_THREE)%']
+sts_kafka:
+    consumers:
+        instances:
+            App\Consumer\HealthCheckConsumer:
+                schema_registry: 'http://172.25.0.201:8081'
+                brokers: '%kafka_default_brokers%'
+                group_id: '%env(KAFKA_DEFAULT_GROUP_ID)%'
+                topics: ['%env(KAFKA_HEALTH_CHECK_TOPIC)%']
+                decoder: Sts\KafkaBundle\Decoder\PlainDecoder
+    producers:
+        instances:
+            App\Producer\HealthCheckProducer:
+                brokers: '%kafka_default_brokers%'
+                producer_topic: '%env(KAFKA_HEALTH_CHECK_TOPIC)%'
