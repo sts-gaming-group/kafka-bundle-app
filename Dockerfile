@@ -6,8 +6,8 @@ RUN apt-get update && apt-get install -y \
     libicu-dev \
     git
 RUN docker-php-ext-configure zip \
-	&& docker-php-ext-install -j$(nproc) \
-		intl \
+    && docker-php-ext-install -j$(nproc) \
+        intl \
     && pecl install
 
 RUN git clone --depth 1  https://github.com/edenhill/librdkafka.git \
