@@ -22,6 +22,6 @@ RUN pecl channel-update pecl.php.net \
     && rm -rf librdkafka
 
 COPY --from=composer:2.0.11 /usr/bin/composer /usr/bin/composer
-COPY . .
-
 RUN composer install
+
+COPY . .
