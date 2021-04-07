@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0b4141384dd174caeceeb751ef274bb",
+    "content-hash": "fa1b5f18da079219f336a6743ed635b1",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -788,11 +788,11 @@
         },
         {
             "name": "sts/kafka-bundle",
-            "version": "0.2.12",
+            "version": "0.2.15",
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.sts.pl/api/v4/projects/443/packages/composer/archives/sts/kafka-bundle.zip?sha=33841f62cde916bbaab2919ee8ebe97291f869bb",
-                "reference": "33841f62cde916bbaab2919ee8ebe97291f869bb",
+                "url": "https://gitlab.sts.pl/api/v4/projects/443/packages/composer/archives/sts/kafka-bundle.zip?sha=ac776bdb68a1b9917c712f8f12beca1a49e7c83f",
+                "reference": "ac776bdb68a1b9917c712f8f12beca1a49e7c83f",
                 "shasum": ""
             },
             "require": {
@@ -3292,9 +3292,10 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2.5",
+        "php": ">=7.4",
         "ext-ctype": "*",
-        "ext-iconv": "*"
+        "ext-iconv": "*",
+        "ext-rdkafka": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"

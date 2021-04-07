@@ -34,7 +34,7 @@ class HealthCheckConsumer implements ConsumerInterface
         sleep(10);
     }
 
-    public function handleException(KafkaException $exception, Context $context): void
+    public function handleException(\Exception $exception, Context $context): void
     {
         $throwable = $exception->getThrowable();
         if ($throwable instanceof NullMessageException) {
