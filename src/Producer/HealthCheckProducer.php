@@ -41,7 +41,7 @@ class HealthCheckProducer implements ProducerInterface, CallableInterface
                     return;
                 }
 
-                $logger->info(sprintf(
+                $logger->notice(sprintf(
                         'Producer: message produced. Payload %s | Partition %s',
                         $message->payload,
                         $message->partition)
