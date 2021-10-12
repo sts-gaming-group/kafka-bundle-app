@@ -23,10 +23,7 @@ class HealthCheckProducer implements ProducerInterface, CallableInterface
     public function produce($data): Message
     {
         /** @var $data HealthCheck */
-        return new Message(
-            $data->getTimeFormatted(),
-            '0'
-        );
+        return new Message($data->getTimeFormatted());
     }
 
     public function callbacks(): array

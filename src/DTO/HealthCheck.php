@@ -10,9 +10,9 @@ class HealthCheck
 
     private \DateTime $time;
 
-    public function __construct(\DateTime $time)
+    public function __construct(\DateTime $time = null)
     {
-        $this->time = $time;
+        $this->time = $time ?: new \DateTime();
     }
 
     public function getTime(): \DateTime
