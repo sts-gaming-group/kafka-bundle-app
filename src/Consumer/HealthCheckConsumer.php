@@ -6,15 +6,16 @@ namespace App\Consumer;
 
 use App\DTO\HealthCheck;
 use Psr\Log\LoggerInterface;
+use Sts\KafkaBundle\Client\Consumer\Exception\NullMessageException;
 use Sts\KafkaBundle\Client\Consumer\Message;
 use Sts\KafkaBundle\Client\Contract\ConsumerInterface;
 use Sts\KafkaBundle\Client\Producer\ProducerClient;
-use Sts\KafkaBundle\Exception\KafkaException;
-use Sts\KafkaBundle\Exception\NullMessageException;
 use Sts\KafkaBundle\RdKafka\Context;
 
 class HealthCheckConsumer implements ConsumerInterface
 {
+    public const NAME = 'health_check';
+
     private ProducerClient $producerClient;
     private LoggerInterface $logger;
 
@@ -28,7 +29,7 @@ class HealthCheckConsumer implements ConsumerInterface
     {
         $time = $message->getData();
 
-        $this->logger->info(sprintf('Consumer: got message with time %s', $time));
+        $this->logger->notice(sprintf('Consumer: got message with time %s', $time));
         $this->logger->info('Consumer: waiting 10 seconds.');
 
         sleep(10);
@@ -36,21 +37,21 @@ class HealthCheckConsumer implements ConsumerInterface
 
     public function handleException(\Exception $exception, Context $context): void
     {
-        $throwable = $exception->getThrowable();
-        if ($throwable instanceof NullMessageException) {
+        if ($exception instanceof NullMessageException) {
             $this->logger->info('Consumer: no more messages available. Let\'s produce one.');
 
-            $healthCheck = new HealthCheck(new \DateTime());
-            $this->producerClient->produce($healthCheck)->flush();
+            $this->producerClient
+                ->produce(new HealthCheck())
+                ->flush();
 
             return;
         }
 
-        $this->logger->emergency($throwable->getMessage());
+        $this->logger->emergency($exception->getMessage());
     }
 
     public function getName(): string
     {
-        return 'health_check';
+        return self::NAME;
     }
 }

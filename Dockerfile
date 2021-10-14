@@ -1,10 +1,13 @@
 FROM php:7.4-fpm
+
 WORKDIR /application
+
 RUN apt-get update && apt-get install -y \
     libzip-dev \
     zip \
     libicu-dev \
     git
+
 RUN docker-php-ext-configure zip \
     && docker-php-ext-install -j$(nproc) \
         intl \
@@ -22,7 +25,9 @@ RUN pecl channel-update pecl.php.net \
     && rm -rf librdkafka
 
 COPY --from=composer:2.0.11 /usr/bin/composer /usr/bin/composer
+
 COPY composer.* ./
+
 RUN composer install
 
 COPY . .
