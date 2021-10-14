@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:8.0.9-fpm
 
 WORKDIR /application
 
@@ -28,6 +28,6 @@ COPY --from=composer:2.0.11 /usr/bin/composer /usr/bin/composer
 
 COPY composer.* ./
 
-RUN composer install
+RUN /usr/bin/composer install
 
 COPY . .
