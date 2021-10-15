@@ -1,3 +1,5 @@
+![STS_Logos_RGB_Main](/uploads/b0051093d33c1e0cd65e8cf88803d161/STS_Logos_RGB_Main.png)
+
 [[_TOC_]]
 
 Sts/kafka-bundle Symfony 5 example project.
@@ -24,9 +26,9 @@ It should output something similar to
 kafka-bundle-app   docker-php-entrypoint php-fpm   Up      9000/tcp
 ```
 
-4. Prepare Kafka server. The most convenient way is probably Docker image at https://github.com/wurstmeister/kafka-docker
+4. Prepare Kafka server. Probably the most convenient way is a Docker image at https://github.com/wurstmeister/kafka-docker
    
-5. Modify variables in `.env`. Fill them with your Kafka broker's ips.
+5. Modify variables in `.env` (optionally copy that file as `.env.local`). Fill them with your Kafka broker's ips.
 ```
 KAFKA_DEFAULT_BROKER_ONE=your_broker_ip_one
 KAFKA_DEFAULT_BROKER_TWO=your_broker_ip_two
