@@ -26,8 +26,8 @@ RUN pecl channel-update pecl.php.net \
 
 COPY --from=composer:2.0.11 /usr/bin/composer /usr/bin/composer
 
-COPY composer.* ./
+COPY . .
 
 RUN /usr/bin/composer install
 
-COPY . .
+
