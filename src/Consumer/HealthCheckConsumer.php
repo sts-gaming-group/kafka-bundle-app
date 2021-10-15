@@ -30,9 +30,6 @@ class HealthCheckConsumer implements ConsumerInterface
         $time = $message->getData();
 
         $this->logger->notice(sprintf('Consumer: got message with time %s', $time));
-        $this->logger->info('Consumer: waiting 10 seconds.');
-
-        sleep(10);
     }
 
     public function handleException(\Exception $exception, Context $context): void

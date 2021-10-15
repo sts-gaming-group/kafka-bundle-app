@@ -23,7 +23,7 @@ class HealthCheckProducer implements ProducerInterface, CallableInterface
     public function produce($data): Message
     {
         /** @var $data HealthCheck */
-        return new Message($data->getTimeFormatted());
+        return new Message($data->getTimeFormatted(), null);
     }
 
     public function callbacks(): array
@@ -42,10 +42,12 @@ class HealthCheckProducer implements ProducerInterface, CallableInterface
                 }
 
                 $logger->notice(sprintf(
-                        'Producer: message produced. Payload %s | Partition %s',
+                        'Producer: message produced. Payload %s | Partition %s | Waiting 10 seconds.',
                         $message->payload,
                         $message->partition)
                 );
+
+                sleep(10);
             }
         ];
     }
