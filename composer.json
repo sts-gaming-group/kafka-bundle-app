@@ -60,11 +60,5 @@
       "allow-contrib": false,
       "require": "5.2.*"
     }
-  },
-  "repositories": {
-    "gitlab.sts.pl/26": {
-      "type": "composer",
-      "url": "https://gitlab.sts.pl/api/v4/group/26/-/packages/composer/packages.json"
-    }
   }
 }
