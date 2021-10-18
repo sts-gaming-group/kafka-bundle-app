@@ -1,4 +1,5 @@
-![STS_Logos_RGB_Main](/uploads/b0051093d33c1e0cd65e8cf88803d161/STS_Logos_RGB_Main.png)
+![sts_480](/uploads/e34c20ee3ed116a9d506796c801f966c/sts_480.png)
+![apache_kafka](/uploads/808ac0b899b8d17715588b3c7d886289/apache_kafka.png)
 
 [[_TOC_]]
 
