@@ -1,20 +1,18 @@
 ![sts_480](/uploads/e34c20ee3ed116a9d506796c801f966c/sts_480.png)
 ![apache_kafka](/uploads/808ac0b899b8d17715588b3c7d886289/apache_kafka.png)
 
-[[_TOC_]]
-
 # Sts/kafka-bundle Symfony 5 example project.
 
 ## Quick start
 
-1. **Clone the project**
-   
-2. **Install Docker and docker-compose in your OS.** 
+**1. Clone the project**
+
+**2. Install Docker and docker-compose in your OS.** 
    
 - https://docs.docker.com/get-docker/
 - https://docs.docker.com/compose/install/
 
-3. **Build containers and verify them**
+**3. Build containers and verify them**
    
 `docker-compose up -d`
 
@@ -27,9 +25,9 @@ It should output something similar to
 kafka-bundle-app   docker-php-entrypoint php-fpm   Up      9000/tcp
 ```
 
-4. **Prepare Kafka server. Probably the most convenient way is a Docker image at https://github.com/wurstmeister/kafka-docker**
-   
-5. **Modify variables in `.env` (optionally copy that file as `.env.local`). Fill them with your Kafka broker's ips.**
+**4. Prepare Kafka server. Probably the most convenient way is a Docker image at https://github.com/wurstmeister/kafka-docker**
+
+**5. Modify variables in `.env` (optionally copy that file as `.env.local`). Fill them with your Kafka broker's ips.**
 ```
 KAFKA_DEFAULT_BROKER_ONE=your_broker_ip_one
 KAFKA_DEFAULT_BROKER_TWO=your_broker_ip_two
@@ -45,7 +43,7 @@ parameters:
     kafka_default_brokers: ['%env(KAFKA_DEFAULT_BROKER_ONE)%']
 ```
 
-6. **Enter the container `docker-compose exec php bash` and execute `bin/console kafka:consumers:consumer health_check -vvv`**
+**6. Enter the container `docker-compose exec php bash` and execute `bin/console kafka:consumers:consumer health_check -vvv`**
 
 You should be able to see message being consumed and produced every 10 seconds.
 
@@ -66,9 +64,9 @@ To see consumer configuration execute `bin/console kafka:consumers:describe` or 
 │ name                      │ health_check                                   │
 │ topics                    │ sts_kafka_health_check_topic                   │
 │ group_id                  │ sts_kafka_testing_app                          │
-│ brokers                   │ 127.0.0.1:9092                              │
-│                           │ 127.0.0.2:9092                              │
-│                           │ 127.0.0.3:9092                              │
+│ brokers                   │ 127.0.0.1:9092                                 │
+│                           │ 127.0.0.2:9092                                 │
+│                           │ 127.0.0.3:9092                                 │
 │ timeout                   │ 1000                                           │
 │ auto_offset_reset         │ smallest                                       │
 │ auto_commit_interval_ms   │ 50                                             │
