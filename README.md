@@ -1,5 +1,5 @@
-![sts_480](/uploads/e34c20ee3ed116a9d506796c801f966c/sts_480.png)
-![apache_kafka](/uploads/808ac0b899b8d17715588b3c7d886289/apache_kafka.png)
+![sts_480](https://user-images.githubusercontent.com/89898915/137724485-55ed744b-2cfb-4ebf-9151-16a05452970c.png)
+![apache_kafka](https://user-images.githubusercontent.com/89898915/137724062-8b10e236-9976-42e6-a21c-6fd97523e336.png)
 
 # Sts/kafka-bundle Symfony 5 example project.
 
