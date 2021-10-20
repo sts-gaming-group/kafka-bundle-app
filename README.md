@@ -1,7 +1,7 @@
 ![sts_480](https://user-images.githubusercontent.com/89898915/137728843-76c6f102-432e-4a3f-b8c9-316073b89804.png)
 ![apache_kafka](https://user-images.githubusercontent.com/89898915/137728857-495a9d95-15e2-40b4-9d25-ca79b223fa1f.png)
 
-# Sts/kafka-bundle Symfony 5 example project.
+# Sts-gaming-group/kafka-bundle Symfony 5 example project
 
 ## Quick start
 
