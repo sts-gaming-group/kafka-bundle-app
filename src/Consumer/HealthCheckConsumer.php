@@ -6,11 +6,11 @@ namespace App\Consumer;
 
 use App\DTO\HealthCheck;
 use Psr\Log\LoggerInterface;
-use Sts\KafkaBundle\Client\Consumer\Exception\NullMessageException;
-use Sts\KafkaBundle\Client\Consumer\Message;
-use Sts\KafkaBundle\Client\Contract\ConsumerInterface;
-use Sts\KafkaBundle\Client\Producer\ProducerClient;
-use Sts\KafkaBundle\RdKafka\Context;
+use StsGamingGroup\KafkaBundle\Client\Consumer\Exception\NullMessageException;
+use StsGamingGroup\KafkaBundle\Client\Consumer\Message;
+use StsGamingGroup\KafkaBundle\Client\Contract\ConsumerInterface;
+use StsGamingGroup\KafkaBundle\Client\Producer\ProducerClient;
+use StsGamingGroup\KafkaBundle\RdKafka\Context;
 
 class HealthCheckConsumer implements ConsumerInterface
 {

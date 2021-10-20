@@ -6,10 +6,10 @@ namespace App\Producer;
 
 use App\DTO\HealthCheck;
 use Psr\Log\LoggerInterface;
-use Sts\KafkaBundle\Client\Contract\CallableInterface;
-use Sts\KafkaBundle\Client\Contract\ProducerInterface;
-use Sts\KafkaBundle\Client\Producer\Message;
-use Sts\KafkaBundle\RdKafka\Callbacks;
+use StsGamingGroup\KafkaBundle\Client\Contract\CallableInterface;
+use StsGamingGroup\KafkaBundle\Client\Contract\ProducerInterface;
+use StsGamingGroup\KafkaBundle\Client\Producer\Message;
+use StsGamingGroup\KafkaBundle\RdKafka\Callbacks;
 
 class HealthCheckProducer implements ProducerInterface, CallableInterface
 {

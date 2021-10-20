@@ -57,33 +57,33 @@ You should be able to see message being consumed and produced every 10 seconds.
 To see consumer configuration execute `bin/console kafka:consumers:describe` or `bin/console k:c:d`
 
 ```
-┌───────────────────────────┬────────────────────────────────────────────────┐
-│ configuration             │ value                                          │
-├───────────────────────────┼────────────────────────────────────────────────┤
-│ class                     │ App\Consumer\HealthCheckConsumer               │
-│ name                      │ health_check                                   │
-│ topics                    │ sts_kafka_health_check_topic                   │
-│ group_id                  │ sts_kafka_testing_app                          │
-│ brokers                   │ 127.0.0.1:9092                                 │
-│                           │ 127.0.0.2:9092                                 │
-│                           │ 127.0.0.3:9092                                 │
-│ timeout                   │ 1000                                           │
-│ auto_offset_reset         │ smallest                                       │
-│ auto_commit_interval_ms   │ 50                                             │
-│ decoder                   │ Sts\KafkaBundle\Decoder\PlainDecoder           │
-│ schema_registry           │ http://127.0.0.1:8081                          │
-│ enable_auto_offset_store  │ true                                           │
-│ enable_auto_commit        │ true                                           │
-│ log_level                 │ 3                                              │
-│ register_missing_schemas  │ false                                          │
-│ register_missing_subjects │ false                                          │
-│ denormalizer              │ Sts\KafkaBundle\Denormalizer\PlainDenormalizer │
-│ max_retries               │ 0                                              │
-│ retry_delay               │ 200                                            │
-│ retry_multiplier          │ 2                                              │
-│ max_retry_delay           │ 2000                                           │
-│ validators                │ Sts\KafkaBundle\Validator\Type\PlainValidator  │
-└───────────────────────────┴────────────────────────────────────────────────┘
+┌───────────────────────────┬───────────────────────────────────────────────────────────┐
+│ configuration             │ value                                                     │
+├───────────────────────────┼───────────────────────────────────────────────────────────┤
+│ class                     │ App\Consumer\HealthCheckConsumer                          │
+│ name                      │ health_check                                              │
+│ topics                    │ sts_kafka_health_check_topic                              │
+│ group_id                  │ sts_kafka_testing_app                                     │
+│ brokers                   │ 172.25.0.201:9092                                         │
+│                           │ 172.25.0.202:9092                                         │
+│                           │ 172.25.0.203:9092                                         │
+│ timeout                   │ 1000                                                      │
+│ auto_offset_reset         │ smallest                                                  │
+│ auto_commit_interval_ms   │ 50                                                        │
+│ decoder                   │ StsGamingGroup\KafkaBundle\Decoder\PlainDecoder           │
+│ schema_registry           │ http://127.0.0.1:8081                                     │
+│ enable_auto_offset_store  │ true                                                      │
+│ enable_auto_commit        │ true                                                      │
+│ log_level                 │ 3                                                         │
+│ register_missing_schemas  │ false                                                     │
+│ register_missing_subjects │ false                                                     │
+│ denormalizer              │ StsGamingGroup\KafkaBundle\Denormalizer\PlainDenormalizer │
+│ max_retries               │ 0                                                         │
+│ retry_delay               │ 200                                                       │
+│ retry_multiplier          │ 2                                                         │
+│ max_retry_delay           │ 2000                                                      │
+│ validators                │ StsGamingGroup\KafkaBundle\Validator\Type\PlainValidator  │
+└───────────────────────────┴───────────────────────────────────────────────────────────┘
 ```
 
 ## Examples
