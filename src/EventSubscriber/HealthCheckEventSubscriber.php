@@ -6,8 +6,8 @@ namespace App\EventSubscriber;
 
 use App\Consumer\HealthCheckConsumer;
 use Psr\Log\LoggerInterface;
-use Sts\KafkaBundle\Event\PostMessageConsumedEvent;
-use Sts\KafkaBundle\Event\PreMessageConsumedEvent;
+use StsGamingGroup\KafkaBundle\Event\PostMessageConsumedEvent;
+use StsGamingGroup\KafkaBundle\Event\PreMessageConsumedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class HealthCheckEventSubscriber implements EventSubscriberInterface
