@@ -43,11 +43,10 @@ parameters:
     kafka_default_brokers: ['%env(KAFKA_DEFAULT_BROKER_ONE)%']
 ```
 
-**6. Enter the container, install packages and launch consumer**
+**6. Enter the container and launch consumer**
 
 ```
 docker-compose exec php bash
-composer install
 bin/console kafka:consumers:consume health_check -vvv
 ```
 
