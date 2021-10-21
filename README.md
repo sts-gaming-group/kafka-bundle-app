@@ -43,7 +43,13 @@ parameters:
     kafka_default_brokers: ['%env(KAFKA_DEFAULT_BROKER_ONE)%']
 ```
 
-**6. Enter the container `docker-compose exec php bash` and execute `bin/console kafka:consumers:consumer health_check -vvv`**
+**6. Enter the container, install packages and launch consumer**
+
+```
+docker-compose exec php bash
+composer install
+bin/console kafka:consumers:consume health_check -vvv
+```
 
 You should be able to see message being consumed and produced every 10 seconds.
 
