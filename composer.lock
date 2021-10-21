@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ba333d1977c091b51bee224fab460ed",
+    "content-hash": "c0ee548e66d780ba3926b5d27387422f",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -973,11 +973,17 @@
         },
         {
             "name": "sts-gaming-group/kafka-bundle",
-            "version": "dev-master",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sts-gaming-group/kafka-bundle.git",
+                "reference": "ee9bbfcb06dba86c4c3593fdcee2ffc9421691bc"
+            },
             "dist": {
-                "type": "path",
-                "url": "/home/mariuszj/www/kafka-bundle",
-                "reference": "831240e0384fc3dca06ff7f31ac01560790d63c9"
+                "type": "zip",
+                "url": "https://api.github.com/repos/sts-gaming-group/kafka-bundle/zipball/ee9bbfcb06dba86c4c3593fdcee2ffc9421691bc",
+                "reference": "ee9bbfcb06dba86c4c3593fdcee2ffc9421691bc",
+                "shasum": ""
             },
             "require": {
                 "ext-json": "*",
@@ -1007,11 +1013,7 @@
                     "StsGamingGroup\\KafkaBundle\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "StsGamingGroup\\KafkaBundle\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1022,10 +1024,11 @@
                 }
             ],
             "description": "Bundle to consume and produce messages from/to Apache Kafka.",
-            "transport-options": {
-                "symlink": false,
-                "relative": false
-            }
+            "support": {
+                "issues": "https://github.com/sts-gaming-group/kafka-bundle/issues",
+                "source": "https://github.com/sts-gaming-group/kafka-bundle/tree/1.0.1"
+            },
+            "time": "2021-10-20T08:36:37+00:00"
         },
         {
             "name": "symfony/cache",
