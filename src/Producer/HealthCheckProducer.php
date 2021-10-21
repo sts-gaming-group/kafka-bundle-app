@@ -41,10 +41,12 @@ class HealthCheckProducer implements ProducerInterface, CallableInterface
                     return;
                 }
 
-                $logger->notice(sprintf(
+                $logger->notice(
+                    sprintf(
                         'Producer: message produced. Payload %s | Partition %s | Waiting 10 seconds.',
                         $message->payload,
-                        $message->partition)
+                        $message->partition
+                    )
                 );
 
                 sleep(10);
