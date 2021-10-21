@@ -7,3 +7,9 @@ services:
     volumes:
       - ./:/application
       - ./docker/php-cli/php-cli-ini-overrides.ini:/etc/php/8.0/cli/conf.d/99-overrides.ini
+  composer:
+    container_name: kafka-bundle-app-composer
+    image: composer
+    volumes:
+      - ./:/application
+    command: composer install

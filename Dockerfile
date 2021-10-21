@@ -28,6 +28,4 @@ COPY --from=composer:2.0.11 /usr/bin/composer /usr/bin/composer
 
 COPY . .
 
-RUN /usr/bin/composer install
-
 
