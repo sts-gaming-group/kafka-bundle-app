@@ -3,31 +3,38 @@
 
 # Sts-gaming-group/kafka-bundle Symfony 5 example project
 
+* [Quick start](#quick-start)
+* [Additional info](#additional-info)
+* [Examples](#examples)
+
 ## Quick start
 
-**1. Clone the project**
+- Clone the project
 
-**2. Install Docker and docker-compose in your OS.** 
+```
+git clone https://github.com/sts-gaming-group/kafka-bundle-app
+```
+
+- Install Docker (https://docs.docker.com/get-docker/) and docker-compose (https://docs.docker.com/compose/install/) according to your OS. 
    
-- https://docs.docker.com/get-docker/
-- https://docs.docker.com/compose/install/
-
-**3. Build containers and verify them**
+-  Build containers and verify them.
    
-`docker-compose up -d`
+```
+docker-compose up -d
+docker-compose ps
+```
 
-`docker-compose ps`   
-
-It should output something similar to
+You should see something like this
 ```
 Name                     Command                         State   Ports  
 -------------------------------------------------------------------------
 kafka-bundle-app_php_1   docker-php-entrypoint php-fpm   Up      9000/tcp
 ```
 
-**4. Prepare Kafka server. Probably the most convenient way is a Docker image at https://github.com/wurstmeister/kafka-docker**
+- Prepare Kafka server. Probably the most convenient way is a Docker image at https://github.com/wurstmeister/kafka-docker
 
-**5. Modify variables in `.env` (optionally copy that file as `.env.local`). Fill them with your Kafka broker's ips.**
+
+- Modify variables in `.env` (optionally copy that file as `.env.local`). Fill them with your Kafka broker's ips.
 ```
 KAFKA_DEFAULT_BROKER_ONE=your_broker_ip_one
 KAFKA_DEFAULT_BROKER_TWO=your_broker_ip_two
@@ -43,10 +50,11 @@ parameters:
     kafka_default_brokers: ['%env(KAFKA_DEFAULT_BROKER_ONE)%']
 ```
 
-**6. Enter the container and launch consumer**
+- Enter the container and launch consumer
 
 ```
 docker-compose exec php bash
+
 bin/console kafka:consumers:consume health_check -vvv
 ```
 
@@ -58,6 +66,8 @@ You should be able to see message being consumed and produced every 10 seconds.
 [notice] Consumer: got message with time 2021-15-34 12:29:34
 
 ```
+
+## Additional info
 
 To see consumer configuration execute `bin/console kafka:consumers:describe` or `bin/console k:c:d`
 
