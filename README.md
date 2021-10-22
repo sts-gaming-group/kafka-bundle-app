@@ -20,9 +20,9 @@
 
 It should output something similar to
 ```
-      Name                    Command              State    Ports  
--------------------------------------------------------------------
-kafka-bundle-app   docker-php-entrypoint php-fpm   Up      9000/tcp
+Name                     Command                         State   Ports  
+-------------------------------------------------------------------------
+kafka-bundle-app_php_1   docker-php-entrypoint php-fpm   Up      9000/tcp
 ```
 
 **4. Prepare Kafka server. Probably the most convenient way is a Docker image at https://github.com/wurstmeister/kafka-docker**
@@ -69,9 +69,9 @@ To see consumer configuration execute `bin/console kafka:consumers:describe` or 
 │ name                      │ health_check                                              │
 │ topics                    │ sts_kafka_health_check_topic                              │
 │ group_id                  │ sts_kafka_testing_app                                     │
-│ brokers                   │ 172.25.0.201:9092                                         │
-│                           │ 172.25.0.202:9092                                         │
-│                           │ 172.25.0.203:9092                                         │
+│ brokers                   │ 127.0.0.1:9092                                            │
+│                           │ 127.0.0.2:9092                                            │
+│                           │ 127.0.0.3:9092                                            │
 │ timeout                   │ 1000                                                      │
 │ auto_offset_reset         │ smallest                                                  │
 │ auto_commit_interval_ms   │ 50                                                        │
