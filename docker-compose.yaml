@@ -2,12 +2,8 @@ version: "3.5"
 services:
   php:
     build: .
-    working_dir: /application
+    working_dir: /app
     volumes:
-      - ./:/application
+      - .:/app
+      - /app/vendor
       - ./docker/php-cli/php-cli-ini-overrides.ini:/etc/php/8.0/cli/conf.d/99-overrides.ini
-  composer:
-    image: composer
-    volumes:
-      - ./:/application
-    command: composer install

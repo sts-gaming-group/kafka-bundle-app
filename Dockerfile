@@ -1,7 +1,5 @@
 FROM php:8.0.9-fpm
 
-WORKDIR /application
-
 RUN apt-get update && apt-get install -y \
     libzip-dev \
     zip \
@@ -26,6 +24,9 @@ RUN pecl channel-update pecl.php.net \
 
 COPY --from=composer:2.0.11 /usr/bin/composer /usr/bin/composer
 
-COPY . .
+COPY . /app
 
+WORKDIR /app
+
+RUN composer install --no-interaction
 
