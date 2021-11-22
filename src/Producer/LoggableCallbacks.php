@@ -28,7 +28,7 @@ trait LoggableCallbacks
 
                 $logger->notice(
                     sprintf(
-                        'Producer: message produced. Payload %s | Partition %s | Waiting 10 seconds.',
+                        'Producer: message produced. Payload %s | Partition %s',
                         $message->payload,
                         $message->partition
                     )

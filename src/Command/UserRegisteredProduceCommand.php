@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Command;
 
 use App\DTO\UserRegistered;
-use App\Producer\UserRegisteredProducer;
 use StsGamingGroup\KafkaBundle\Client\Producer\ProducerClient;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -16,7 +15,7 @@ class UserRegisteredProduceCommand extends Command
 {
     protected static $defaultName = 'app:user-registered:produce';
 
-    public function __construct(private ProducerClient $client)
+    public function __construct(private ProducerClient $client, private int $userRegisteredTopicPartitionsNo)
     {
         parent::__construct();
     }
@@ -33,7 +32,7 @@ class UserRegisteredProduceCommand extends Command
         $count = (int) $input->getOption('count');
 
         for ($i = 1; $i <= $count; ++$i) {
-            $clientId = $i % UserRegisteredProducer::MAX_PARTITIONS;
+            $clientId = $i % $this->userRegisteredTopicPartitionsNo;
             $userRegistered = new UserRegistered($clientId, new \DateTime());
 
             $this->client->produce($userRegistered);

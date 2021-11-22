@@ -15,9 +15,7 @@ class UserRegisteredProducer implements PartitionAwareProducerInterface, Callabl
 {
     use LoggableCallbacks;
 
-    public const MAX_PARTITIONS = 16;
-
-    public function __construct(private LoggerInterface $logger)
+    public function __construct(private LoggerInterface $logger, private int $userRegisteredTopicPartitionsNo)
     {
     }
 
@@ -37,7 +35,7 @@ class UserRegisteredProducer implements PartitionAwareProducerInterface, Callabl
     public function getPartition($data, ResolvedConfiguration $configuration): int
     {
         /** @var $data UserRegistered */
-        return $data->getClientId() % self::MAX_PARTITIONS;
+        return $data->getClientId() % $this->userRegisteredTopicPartitionsNo;
     }
 
     protected function getLogger(): LoggerInterface
